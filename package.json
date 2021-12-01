@@ -1,0 +1,29 @@
+{
+  "name": "advent-of-code-2021",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhrapahwa/advent-of-code-2021.git"
+  },
+  "author": "shubhrapahwa",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/shubhrapahwa/advent-of-code-2021/issues"
+  },
+  "homepage": "https://github.com/shubhrapahwa/advent-of-code-2021#readme",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^16.11.11",
+    "prettier": "^2.5.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
+}
