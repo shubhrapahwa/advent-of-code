@@ -51,7 +51,9 @@ export const calculateResultPart1 = (filePath: string): number => {
 export const calculateResultPart2 = (filePath: string): number => {
   const inputArray = readFileSync(filePath, "utf8")
     .split("\n")
-    .map((l) => l.split("").map((x) => +x));
+    .map((element: string) =>
+      element.split("").map((bit: string): number => +bit)
+    );
 
   let resultMC = [...inputArray];
   let resultLC = [...inputArray];
