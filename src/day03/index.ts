@@ -32,17 +32,14 @@ export const calculateResultPart1 = (filePath: string): number => {
   for (let i = 0; i < inputArray[0].length; i++) {
     const column = inputArray.map((x) => x[i]);
 
-    const xyz = findMCBit(column);
-    resultMC.push(xyz);
+    const mc = findMCBit(column);
+    resultMC.push(mc);
 
-    const xyz1 = findLCBit(column);
-    resultLC.push(xyz1);
+    const lc = findLCBit(column);
+    resultLC.push(lc);
   }
 
-  const mcDecimal = parseInt(resultMC.join(""), 2);
-  const lcDecimal = parseInt(resultLC.join(""), 2);
-
-  return mcDecimal * lcDecimal;
+  return parseInt(resultMC.join(""), 2) * parseInt(resultLC.join(""), 2);
 };
 
 /**
@@ -82,8 +79,5 @@ export const calculateResultPart2 = (filePath: string): number => {
     }
   }
 
-  const mcDecimal = parseInt(resultMC[0].join(""), 2);
-  const lcDecimal = parseInt(resultLC[0].join(""), 2);
-
-  return mcDecimal * lcDecimal;
+  return parseInt(resultMC[0].join(""), 2) * parseInt(resultLC[0].join(""), 2);
 };
