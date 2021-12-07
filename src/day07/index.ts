@@ -16,35 +16,15 @@ const getPositions = (
   return { minPosition, maxPosition };
 };
 
-/**
- * Part - 1
- */
-export const calculateResultPart1 = (filePath: string): number => {
-  const inputArray = readFileSync(filePath, "utf8")
-    .split(",")
-    .map((num: string): number => +num);
+enum DistanceType {
+  LINEAR = "linear",
+  EXPONENTIAL = "exponential",
+}
 
-  const { minPosition, maxPosition } = getPositions([...inputArray]);
-
-  const result: Map<number, number> = new Map<number, number>();
-
-  for (let i = minPosition; i <= maxPosition; i++) {
-    let totalDistanceAtI: number = 0;
-
-    inputArray.forEach((element) => {
-      totalDistanceAtI += Math.abs(i - element);
-    });
-
-    result.set(i, totalDistanceAtI);
-  }
-
-  return findMinValueInMap(result);
-};
-
-/**
- * Part - 2
- */
-export const calculateResultPart2 = (filePath: string): number | undefined => {
+export const calculateLeastDistance = (
+  filePath: string,
+  distanceType: string
+): number | undefined => {
   const inputArray = readFileSync(filePath, "utf8")
     .split(",")
     .map((num: string): number => +num);
@@ -59,7 +39,13 @@ export const calculateResultPart2 = (filePath: string): number | undefined => {
     inputArray.forEach((element) => {
       const distance = Math.abs(i - element);
 
-      totalDistanceAtI += (distance * (distance + 1)) / 2;
+      if (distanceType === DistanceType.LINEAR) {
+        totalDistanceAtI += distance;
+      }
+
+      if (distanceType === DistanceType.EXPONENTIAL) {
+        totalDistanceAtI += (distance * (distance + 1)) / 2;
+      }
     });
 
     result.set(i, totalDistanceAtI);
