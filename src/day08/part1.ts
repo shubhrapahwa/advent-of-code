@@ -1,9 +1,9 @@
-import { readFileSync } from "fs";
+import { readFileSync } from 'fs';
 
 export const calculateResultPart1 = (filePath: string): number => {
-  const inputArray = readFileSync(filePath, "utf8")
-    .split("\n")
-    .map((x) => x.split(" | ")[1]);
+  const inputArray = readFileSync(filePath, 'utf8')
+    .split('\n')
+    .map((x) => x.split(' | ')[1]);
 
   let sum = 0;
 
@@ -11,7 +11,7 @@ export const calculateResultPart1 = (filePath: string): number => {
   const unique = [2, 4, 3, 7];
 
   inputArray.forEach((element) => {
-    const input = element.split(" ");
+    const input = element.split(' ');
 
     const sumIs = input.filter((x) => unique.includes(x.length));
 

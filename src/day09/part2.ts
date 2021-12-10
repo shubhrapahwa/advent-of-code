@@ -3,7 +3,7 @@ import {
   createInputArray,
   Dimension,
   findAdjacentPoints,
-} from "./utils";
+} from './utils';
 
 export const part2 = (filePath: string): number => {
   const inputArray = createInputArray(filePath);

@@ -1,9 +1,9 @@
-import { readFileSync } from "fs";
+import { readFileSync } from 'fs';
 
 enum Direction {
-  Forward = "forward",
-  Down = "down",
-  Up = "up",
+  Forward = 'forward',
+  Down = 'down',
+  Up = 'up',
 }
 
 interface Position {
@@ -15,11 +15,11 @@ interface Position {
  * Part - 1
  */
 export const calculateResultPart1 = (filePath: string): number => {
-  const inputArray = readFileSync(filePath, "utf8").split("\n");
+  const inputArray = readFileSync(filePath, 'utf8').split('\n');
 
   const { horizontal, depth } = inputArray.reduce(
     (previousValue: Position, currentValue: string): Position => {
-      const [dir, value] = currentValue.split(" ");
+      const [dir, value] = currentValue.split(' ');
 
       const val = +value;
 
@@ -57,11 +57,11 @@ interface PositionWithAim extends Position {
  * Part - 2
  */
 export const calculateResultPart2 = (filePath: string): number => {
-  const inputArray = readFileSync(filePath, "utf8").split("\n");
+  const inputArray = readFileSync(filePath, 'utf8').split('\n');
 
   const { horizontal, depth } = inputArray.reduce(
     (previousValue: PositionWithAim, currentValue: string): PositionWithAim => {
-      const [dir, value] = currentValue.split(" ");
+      const [dir, value] = currentValue.split(' ');
 
       const val = +value;
 

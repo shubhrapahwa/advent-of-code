@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { readFileSync } from 'fs';
 
 const fishGrowthInADay = (
   fishMap: Map<string, number>
@@ -8,20 +8,23 @@ const fishGrowthInADay = (
   for (let i = 0; i < 9; i++) {
     const val = fishMap.get(i.toString()) ?? 0;
     const idx = ((i + 8) % 9).toString();
-    
+
     resultMap.set(idx, val);
   }
 
-  const valOfSix = (resultMap.get("6") ?? 0) + (fishMap.get("0") ?? 0);
+  const valOfSix = (resultMap.get('6') ?? 0) + (fishMap.get('0') ?? 0);
 
-  resultMap.set("6", valOfSix);
+  resultMap.set('6', valOfSix);
 
   return resultMap;
 };
 
-export const calculateNumberOfFishes = (filePath: string, days: number): number => {
-  const inputArray = readFileSync(filePath, "utf8")
-    .split(",")
+export const calculateNumberOfFishes = (
+  filePath: string,
+  days: number
+): number => {
+  const inputArray = readFileSync(filePath, 'utf8')
+    .split(',')
     .map((num: string): number => +num);
 
   let fishMap = new Map<string, number>();

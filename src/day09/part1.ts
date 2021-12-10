@@ -1,4 +1,4 @@
-import { createInputArray } from "./utils";
+import { createInputArray } from './utils';
 
 export const part1 = (filePath: string): number => {
   const inputArray = createInputArray(filePath);

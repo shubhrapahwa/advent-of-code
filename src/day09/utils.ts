@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { readFileSync } from 'fs';
 
 export interface Dimension {
   height: number;
@@ -6,10 +6,10 @@ export interface Dimension {
 }
 
 export const createInputArray = (filePath: string): number[][] =>
-  readFileSync(filePath, "utf8")
-    .split("\n")
+  readFileSync(filePath, 'utf8')
+    .split('\n')
     .map((x): number[] => {
-      const a = x.split("");
+      const a = x.split('');
       return a.map((y) => +y);
     });
 

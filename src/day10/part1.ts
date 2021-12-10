@@ -1,10 +1,10 @@
-import { checkBrackets, readInput } from "./utils";
+import { checkBrackets, readInput } from './utils';
 
 const weightMap: Map<string, number> = new Map([
-  [")", 3],
-  ["]", 57],
-  ["}", 1197],
-  [">", 25137],
+  [')', 3],
+  [']', 57],
+  ['}', 1197],
+  ['>', 25137],
 ]);
 
 export const calculateResultPart1 = (filePath: string): number => {

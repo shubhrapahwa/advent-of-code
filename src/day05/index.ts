@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { readFileSync } from 'fs';
 import {
   count,
   fetchVentCoordinates,
@@ -7,10 +7,13 @@ import {
   findXY,
   getAllCoordinates,
   markMatrix,
-} from "./utils";
+} from './utils';
 
-export const calculateResult = (filePath: string, diagonalIncluded: boolean): number => {
-  const inputArray = readFileSync(filePath, "utf8").split("\n");
+export const calculateResult = (
+  filePath: string,
+  diagonalIncluded: boolean
+): number => {
+  const inputArray = readFileSync(filePath, 'utf8').split('\n');
 
   const ventCoordinates = fetchVentCoordinates(inputArray);
 
@@ -19,9 +22,15 @@ export const calculateResult = (filePath: string, diagonalIncluded: boolean): nu
 
   let matrix = fillMatrix(row, column);
 
-  const filteredCoordinates = (diagonalIncluded === true) ? ventCoordinates : filterVentCoordinates(ventCoordinates);
+  const filteredCoordinates =
+    diagonalIncluded === true
+      ? ventCoordinates
+      : filterVentCoordinates(ventCoordinates);
 
-  const allCoordinates = getAllCoordinates(filteredCoordinates, diagonalIncluded);
+  const allCoordinates = getAllCoordinates(
+    filteredCoordinates,
+    diagonalIncluded
+  );
 
   // mark matrix
   matrix = markMatrix(allCoordinates, matrix);

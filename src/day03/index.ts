@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { readFileSync } from 'fs';
 
 const findMCBit = (arr: number[]): number => {
   const reducer = arr.reduce((accumulator: number, value: number): number => {
@@ -20,10 +20,10 @@ const findLCBit = (arr: number[]): number => {
  * Part - 1
  */
 export const calculateResultPart1 = (filePath: string): number => {
-  const inputArray = readFileSync(filePath, "utf8")
-    .split("\n")
+  const inputArray = readFileSync(filePath, 'utf8')
+    .split('\n')
     .map((element: string) =>
-      element.split("").map((bit: string): number => +bit)
+      element.split('').map((bit: string): number => +bit)
     );
 
   const resultMC: number[] = [];
@@ -39,17 +39,17 @@ export const calculateResultPart1 = (filePath: string): number => {
     resultLC.push(lc);
   }
 
-  return parseInt(resultMC.join(""), 2) * parseInt(resultLC.join(""), 2);
+  return parseInt(resultMC.join(''), 2) * parseInt(resultLC.join(''), 2);
 };
 
 /**
  * Part - 2
  */
 export const calculateResultPart2 = (filePath: string): number => {
-  const inputArray = readFileSync(filePath, "utf8")
-    .split("\n")
+  const inputArray = readFileSync(filePath, 'utf8')
+    .split('\n')
     .map((element: string) =>
-      element.split("").map((bit: string): number => +bit)
+      element.split('').map((bit: string): number => +bit)
     );
 
   let resultMC = [...inputArray];
@@ -79,5 +79,5 @@ export const calculateResultPart2 = (filePath: string): number => {
     }
   }
 
-  return parseInt(resultMC[0].join(""), 2) * parseInt(resultLC[0].join(""), 2);
+  return parseInt(resultMC[0].join(''), 2) * parseInt(resultLC[0].join(''), 2);
 };

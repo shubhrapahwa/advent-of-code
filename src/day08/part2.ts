@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { readFileSync } from 'fs';
 
 const solveForLength5 = (charsOf5: string[][], map: Map<number, string[]>) => {
   const common = new Set<string>();
@@ -24,7 +24,7 @@ const solveForLength5 = (charsOf5: string[][], map: Map<number, string[]>) => {
       map.set(3, charsOf5[idx]);
     } else {
       const valueOf4 = map.get(4) ?? [];
-      const reducedValOf4 = valueOf4.filter((x) => !valueOf1.includes(x));
+      const reducedValOf4 = valueOf4.filter((a) => !valueOf1.includes(a));
 
       const [y] = element.filter((element1) => !valueOf1.includes(element1));
 
@@ -85,12 +85,12 @@ const arraysAreIdentical = (arr1: string[], arr2: string[]) => {
     }
   }
   return true;
-}
+};
 
 const getKey = (map: Map<number, string[]>, value1: string[]): number => {
   let result: number = 0;
 
-  for (let [key, value] of map) {
+  for (const [key, value] of map) {
     if (arraysAreIdentical(value, value1)) {
       result = key;
       break;
@@ -102,34 +102,34 @@ const getKey = (map: Map<number, string[]>, value1: string[]): number => {
 
 const createMapping = (input: string[]): Map<number, string[]> => {
   let map = new Map<number, string[]>();
-  let charsOf5: string[][] = [];
-  let charsOf6: string[][] = [];
+  const charsOf5: string[][] = [];
+  const charsOf6: string[][] = [];
 
   input.forEach((element) => {
     switch (element.length) {
       case 2:
         // digit 1
-        map.set(1, element.split("").sort());
+        map.set(1, element.split('').sort());
         break;
       case 4:
         // digit 4
-        map.set(4, element.split("").sort());
+        map.set(4, element.split('').sort());
         break;
       case 3:
         // digit 7
-        map.set(7, element.split("").sort());
+        map.set(7, element.split('').sort());
         break;
       case 7:
         // digit 8
-        map.set(8, element.split("").sort());
+        map.set(8, element.split('').sort());
         break;
       case 5:
         // digit - 2 or 3 or 5
-        charsOf5.push(element.split("").sort());
+        charsOf5.push(element.split('').sort());
         break;
       case 6:
         // digit - 0 or 6 or 9
-        charsOf6.push(element.split("").sort());
+        charsOf6.push(element.split('').sort());
         break;
       default:
         break;
@@ -149,10 +149,10 @@ const processOutput = (
   output: string[],
   map: Map<number, string[]>
 ): string => {
-  let result: string = "";
+  let result: string = '';
 
   output.forEach((element) => {
-    const arr = element.split("").sort();
+    const arr = element.split('').sort();
     const digit = getKey(map, arr).toString();
 
     result = result.concat(digit);
@@ -162,13 +162,13 @@ const processOutput = (
 };
 
 export const calculateResultPart2 = (filePath: string): number => {
-  const inputArray = readFileSync(filePath, "utf8").split("\n");
+  const inputArray = readFileSync(filePath, 'utf8').split('\n');
 
   const result: number[] = [];
 
   inputArray.forEach((element) => {
-    const input = element.split(" | ")[0].split(" ");
-    const output = element.split(" | ")[1].split(" ");
+    const input = element.split(' | ')[0].split(' ');
+    const output = element.split(' | ')[1].split(' ');
 
     const map = createMapping(input);
 

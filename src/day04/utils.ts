@@ -3,36 +3,34 @@ export interface Position {
   y: number;
 }
 
-const getIndexOfK = (
-  arr: number[][],
-  k: number
-): number[] | undefined => {
+const getIndexOfK = (arr: number[][], k: number): number[] | undefined => {
   for (let row = 0; row < arr.length; row++) {
-    let column = arr[row].indexOf(k);
+    const column = arr[row].indexOf(k);
     if (column > -1) {
       return [row, column];
     }
   }
 };
 
-export const chunkArray = (arr: string[], chunk_size: number): number[][][] => {
-  const results = [];
+export const chunkArray = (arr: string[], size: number): number[][][] => {
+  const resultantArray = [];
 
   while (arr.length) {
-    const x = arr.splice(0, chunk_size);
+    const block = arr.splice(0, size);
 
-    if (x.length === 1 && x[0] === "") {
+    if (block.length === 1 && block[0] === '') {
+      // do nothing
     } else {
-      const [a, ...others] = x;
+      const [a, ...others] = block;
       const o1 = others.map((y: string): number[] => {
-        const bbb = y.split(" ");
-        return bbb.filter((x) => x !== "").map((x) => +x);
+        const bbb = y.split(' ');
+        return bbb.filter((x1) => x1 !== '').map((x2) => +x2);
       });
-      results.push(o1);
+      resultantArray.push(o1);
     }
   }
 
-  return results;
+  return resultantArray;
 };
 
 export const getSum = (

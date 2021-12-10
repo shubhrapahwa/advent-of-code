@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { readFileSync } from 'fs';
 
 const sortAsc = (a: number, b: number): number => {
   return a - b;
@@ -17,16 +17,16 @@ const getPositions = (
 };
 
 enum DistanceType {
-  LINEAR = "linear",
-  EXPONENTIAL = "exponential",
+  LINEAR = 'linear',
+  EXPONENTIAL = 'exponential',
 }
 
 export const calculateLeastDistance = (
   filePath: string,
   distanceType: string
 ): number | undefined => {
-  const inputArray = readFileSync(filePath, "utf8")
-    .split(",")
+  const inputArray = readFileSync(filePath, 'utf8')
+    .split(',')
     .map((num: string): number => +num);
 
   const { minPosition, maxPosition } = getPositions([...inputArray]);

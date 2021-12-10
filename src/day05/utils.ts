@@ -11,13 +11,13 @@ export const fetchVentCoordinates = (input: string[]): VentCoordinates[] =>
       accumulator: VentCoordinates[],
       currentValue: string
     ): VentCoordinates[] => {
-      const curr = currentValue.replace(/\s+/g, "").split("->");
+      const curr = currentValue.replace(/\s+/g, '').split('->');
 
       const vent = {
-        x1: +curr[0].split(",")[0],
-        y1: +curr[0].split(",")[1],
-        x2: +curr[1].split(",")[0],
-        y2: +curr[1].split(",")[1],
+        x1: +curr[0].split(',')[0],
+        y1: +curr[0].split(',')[1],
+        x2: +curr[1].split(',')[0],
+        y2: +curr[1].split(',')[1],
       };
 
       accumulator.push(vent);
@@ -72,10 +72,10 @@ const diagRange = (vent: VentCoordinates): number[][] => {
   // (1,1) => (3, 3)
   const { x1, y1, x2, y2 } = vent;
 
-  let result: number[][] = [[]];
+  const result: number[][] = [];
 
-  let x: number[] = [];
-  let y: number[] = [];
+  const x: number[] = [];
+  const y: number[] = [];
 
   if (x1 < x2) {
     for (let i = x1; i <= x2; i++) {
@@ -101,9 +101,7 @@ const diagRange = (vent: VentCoordinates): number[][] => {
     result.push([x[i], y[i]]);
   }
 
-  const [empty, ...others] = result;
-
-  return others;
+  return result;
 };
 
 export const getAllCoordinates = (
@@ -141,11 +139,11 @@ export const getAllCoordinates = (
 
 export const count = (matrix: number[][], num: number) => {
   return matrix.reduce((accumulator, currentValue: number[]): number => {
-    const a = currentValue.reduce((a, v) => {
+    const acc = currentValue.reduce((a, v) => {
       return v >= num ? a + 1 : a;
     }, 0);
 
-    return accumulator + a;
+    return accumulator + acc;
   }, 0);
 };
 

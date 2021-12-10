@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --check \"**/*.{js,json,md,ts,yml,yaml}\"",
+    "format:fix": "prettier --write \"**/*.{js,json,md,ts,yml,yaml}\"",
     "lint": "tslint -c ./tslint.json './src/**/*.ts'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
