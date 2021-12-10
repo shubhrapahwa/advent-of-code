@@ -21,6 +21,7 @@ export const chunkArray = (arr: string[], size: number): number[][][] => {
     if (block.length === 1 && block[0] === '') {
       // do nothing
     } else {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const [a, ...others] = block;
       const o1 = others.map((y: string): number[] => {
         const bbb = y.split(' ');
@@ -89,6 +90,7 @@ export const getMarkedMap = (
 };
 
 export const getOccurrences = (arr: number[]) =>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   arr.reduce((acc: any, curr: number) => {
     return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
   }, {});

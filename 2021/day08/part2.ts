@@ -88,7 +88,7 @@ const arraysAreIdentical = (arr1: string[], arr2: string[]) => {
 };
 
 const getKey = (map: Map<number, string[]>, value1: string[]): number => {
-  let result: number = 0;
+  let result = 0;
 
   for (const [key, value] of map) {
     if (arraysAreIdentical(value, value1)) {
@@ -149,7 +149,7 @@ const processOutput = (
   output: string[],
   map: Map<number, string[]>
 ): string => {
-  let result: string = '';
+  let result = '';
 
   output.forEach((element) => {
     const arr = element.split('').sort();

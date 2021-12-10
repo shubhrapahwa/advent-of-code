@@ -54,8 +54,8 @@ export const findXY = (ventCoordinates: VentCoordinates[]): number => {
 };
 
 export const range = (num1: number, num2: number): number[] => {
-  let min: number = 0;
-  let max: number = 0;
+  let min = 0;
+  let max = 0;
 
   if (num1 > num2) {
     min = num2;

@@ -16,7 +16,7 @@ export const calculateResultPart2 = (filePath: string): number => {
   const inputArray = readInput(filePath);
 
   const result = inputArray.reduce(
-    (accumulator: number[], currentValue, index, arr) => {
+    (accumulator: number[], currentValue) => {
       const illegal: string[] = [];
       const chars: string[] = [];
 

@@ -34,7 +34,7 @@ export const calculateLeastDistance = (
   const result: Map<number, number> = new Map<number, number>();
 
   for (let i = minPosition; i <= maxPosition; i++) {
-    let totalDistanceAtI: number = 0;
+    let totalDistanceAtI = 0;
 
     inputArray.forEach((element) => {
       const distance = Math.abs(i - element);

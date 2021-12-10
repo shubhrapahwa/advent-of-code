@@ -22,7 +22,7 @@ export const calculateResultPart1 = (filePath: string): void => {
   let markedMap = new Map<number, Position[]>();
   let resultROW: number[] = [];
   let pnNumber: number = playingNumbers[0];
-  let resultKey: number = 0;
+  let resultKey = 0;
 
   for (const currentPN of playingNumbers) {
     markedMap = getMarkedMap(markedMap, boards, currentPN);
@@ -92,7 +92,7 @@ export const calculateResultPart2 = (filePath: string): void => {
 
   let markedMap = new Map<number, Position[]>();
   let pnNumber: number = playingNumbers[0];
-  let resultKey: number = 0;
+  let resultKey = 0;
   const markedBoard: Set<number> = new Set<number>();
 
   for (const currentPN of playingNumbers) {
