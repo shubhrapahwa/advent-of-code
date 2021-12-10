@@ -8,8 +8,8 @@ export const part1 = (filePath: string): number => {
       const lowestBit = currentValue.filter((value: number, y: number) => {
         if (
           (arr[x + 1] === undefined || arr[x + 1][y] > value) &&
-          (x == 0 || arr[x - 1][y] > value) &&
-          (y == 0 || currentValue[y - 1] > value) &&
+          (x === 0 || arr[x - 1][y] > value) &&
+          (y === 0 || currentValue[y - 1] > value) &&
           (currentValue[y + 1] === undefined || currentValue[y + 1] > value)
         ) {
           return true;

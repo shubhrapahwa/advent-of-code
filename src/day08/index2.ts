@@ -79,7 +79,7 @@ const solveForLength6 = (charsOf6: string[][], map: Map<number, string[]>) => {
 
 const arraysAreIdentical = (arr1: string[], arr2: string[]) => {
   if (arr1.length !== arr2.length) return false;
-  for (var i = 0, len = arr1.length; i < len; i++) {
+  for (let i = 0, len = arr1.length; i < len; i++) {
     if (arr1[i] !== arr2[i]) {
       return false;
     }
@@ -90,7 +90,7 @@ const arraysAreIdentical = (arr1: string[], arr2: string[]) => {
 const getKey = (map: Map<number, string[]>, value1: string[]): number => {
   let result: number = 0;
 
-  for (var [key, value] of map) {
+  for (let [key, value] of map) {
     if (arraysAreIdentical(value, value1)) {
       result = key;
       break;
