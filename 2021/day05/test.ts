@@ -7,13 +7,13 @@ console.log(
 // 5
 console.log(
   'Part 1 solution = ',
-  calculateResult('src/day05/sample.txt', false)
+  calculateResult('day05/sample.txt', false)
 );
 
 // 12
 console.log(
   'Part 2 solution = ',
-  calculateResult('src/day05/sample.txt', true)
+  calculateResult('day05/sample.txt', true)
 );
 
 console.log(
@@ -23,8 +23,8 @@ console.log(
 // 7085
 console.log(
   'Part 1 solution = ',
-  calculateResult('src/day05/input.txt', false)
+  calculateResult('day05/input.txt', false)
 );
 
 // 20271
-console.log('Part 2 solution = ', calculateResult('src/day05/input.txt', true));
+console.log('Part 2 solution = ', calculateResult('day05/input.txt', true));

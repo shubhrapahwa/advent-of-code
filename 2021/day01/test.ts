@@ -7,13 +7,13 @@ console.log(
 // 7
 console.log(
   'Part 1 solution = ',
-  calculateDepthIncrease('src/day01/sample.txt')
+  calculateDepthIncrease('day01/sample.txt')
 );
 
 // 5
 console.log(
   'Part 2 solution = ',
-  calculateDepthSumIncrease('src/day01/sample.txt')
+  calculateDepthSumIncrease('day01/sample.txt')
 );
 
 console.log(
@@ -23,11 +23,11 @@ console.log(
 // 1451
 console.log(
   'Part 1 solution = ',
-  calculateDepthIncrease('src/day01/input.txt')
+  calculateDepthIncrease('day01/input.txt')
 );
 
 // 1395
 console.log(
   'Part 2 solution = ',
-  calculateDepthSumIncrease('src/day01/input.txt')
+  calculateDepthSumIncrease('day01/input.txt')
 );

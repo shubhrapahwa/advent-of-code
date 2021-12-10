@@ -6,11 +6,11 @@ console.log(
 
 // 4512
 console.log('Part 1 solution = ');
-calculateResultPart1('src/day04/sample.txt');
+calculateResultPart1('day04/sample.txt');
 
 // 1924
 console.log('Part 2 solution = ');
-calculateResultPart2('src/day04/sample.txt');
+calculateResultPart2('day04/sample.txt');
 
 console.log(
   '=================================Main test================================='
@@ -18,8 +18,8 @@ console.log(
 
 // 65325
 console.log('Part 1 solution = ');
-calculateResultPart1('src/day04/input.txt');
+calculateResultPart1('day04/input.txt');
 
 // 4624
 console.log('Part 2 solution = ');
-calculateResultPart2('src/day04/input.txt');
+calculateResultPart2('day04/input.txt');
